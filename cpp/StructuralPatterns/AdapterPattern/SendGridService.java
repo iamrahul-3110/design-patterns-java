@@ -1,4 +1,4 @@
-package org.prateek.StructuralPatterns.AdapterPattern;
+package org.rahul.StructuralPatterns.AdapterPattern;
 
 public class SendGridService {
     public void sendEmail(String recipient, String title, String content){
