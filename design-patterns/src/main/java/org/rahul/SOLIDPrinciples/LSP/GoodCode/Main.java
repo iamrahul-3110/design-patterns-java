@@ -7,14 +7,14 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        ReadableFile readableFile = new ReadOnlyFile();
+        ReadableFile readableFile = new ReadOnlyFile(); // Object of ReadOnlyFile assigned to ReadableFile reference
         readableFile.read();
 
-        WritableFile writableFile = new WritableFile();
+        WritableFile writableFile = new WritableFile(); // Object of WritableFile assigned to WritableFile reference
         writableFile.read();
         writableFile.write();
 
-        readAnyFile(readableFile);
-        readAnyFile(writableFile);
+        readAnyFile(readableFile); // reading readOnlyFile using readAnyFile method
+        readAnyFile(writableFile); // reading writableFile using readAnyFile method
     }
 }

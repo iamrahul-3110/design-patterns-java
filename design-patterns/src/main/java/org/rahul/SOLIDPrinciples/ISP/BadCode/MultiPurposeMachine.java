@@ -1,6 +1,6 @@
 package org.rahul.SOLIDPrinciples.ISP.BadCode;
 
-public class MultiPurposeMachine implements Machine{
+public class MultiPurposeMachine implements Machine {
     @Override
     public void print(Document doc) {
         System.out.println("Printing document...");
