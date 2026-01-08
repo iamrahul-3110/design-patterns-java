@@ -5,11 +5,11 @@ import java.util.List;
 
 //Observer Interface
 interface Observer{
-    void update(float temp);
+    void update(float temp); // creating interface to be implemented by all observers for OCP
 }
 
 //Subject Interface
-interface Subject{
+interface Subject{ // Notification logic separated from WeatherStation
     void attach(Observer obs);
     void detach(Observer obs);
     void notifyObservers();
@@ -43,7 +43,7 @@ class WeatherStationIn implements Subject{
     @Override
     public void notifyObservers() {
         for(Observer obs:observerList){
-            obs.update(temperature); //Run Time Polymorphism
+            obs.update(temperature); //Run Time Polymorphism as per observer type
         }
     }
 }
@@ -69,12 +69,12 @@ class MobileDevice implements Observer{
 
 public class ObserverPatternExample {
     public static void main(String[] args) {
-        //Create a Publisher
-        WeatherStationIn weatherStationIn = new WeatherStationIn();
+        //Create a Publisher / Subject
+        WeatherStationIn weatherStationIn = new WeatherStationIn(); // Subject implementation
 
-        //Create subscribers
-        DisplayDeviceIn device = new DisplayDeviceIn("SamsungLCD");
-        MobileDevice mobileDevice = new MobileDevice();
+        //Create subscribers / Observers
+        DisplayDeviceIn device = new DisplayDeviceIn("SamsungLCD"); // Observer implementation
+        MobileDevice mobileDevice = new MobileDevice(); // Observer implementation
 
         //Attach
         weatherStationIn.attach(device);

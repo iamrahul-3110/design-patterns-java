@@ -2,7 +2,7 @@ package org.rahul.BehaviouralPatterns.StrategyPattern;
 
 
 class PaymentService{
-    public void processPayment(String paymentMethod){
+    public void processPayment(String paymentMethod){ // If we add more payment methods, this method will grow huge and violate OCP that's why we need Strategy Pattern
         if(paymentMethod.equals("Credit Card")){
             System.out.println("Making payment via credit card");
         }
