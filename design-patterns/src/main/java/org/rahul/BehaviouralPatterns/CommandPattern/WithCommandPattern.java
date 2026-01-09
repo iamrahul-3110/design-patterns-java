@@ -1,12 +1,12 @@
 package org.rahul.BehaviouralPatterns.CommandPattern;
 
 //Command Interface
-interface Command {
+interface Command { // creating a command interface to encapsulate a request as an object
     void execute();
 }
 
 //Concrete Classes for Commands
-class BoldCommand implements Command{
+class BoldCommand implements Command{ // implementing the command interface for bold action
     private TextEditorII editor;
 
     public BoldCommand(TextEditorII editor){
@@ -19,7 +19,7 @@ class BoldCommand implements Command{
     }
 }
 
-class ChangeColor implements Command{
+class ChangeColor implements Command{ // implementing the command interface for change color action
     private TextEditorII editor;
 
     public ChangeColor(TextEditorII editor){
@@ -34,14 +34,14 @@ class ChangeColor implements Command{
 
 
 //Button Class
-class Button{
-    private Command command;
+class Button{ // Invoker class that will invoke the command which is decoupled from the receiver
+    private Command command; // reference to command interface
 
     public void setCommand(Command command){
         this.command = command;
     }
-    public void click(){
-        command.execute();
+    public void click(){ // method to execute the command when button is clicked
+        command.execute(); // runtime polymorphism to call the execute method of the concrete command class
     }
 }
 

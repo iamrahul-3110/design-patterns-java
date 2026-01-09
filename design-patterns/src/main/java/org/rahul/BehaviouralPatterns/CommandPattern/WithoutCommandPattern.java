@@ -39,7 +39,7 @@ class ItalicButton {
 public class WithoutCommandPattern {
     public static void main(String[] args) {
         TextEditor editor = new TextEditor();
-        BoldButton boldButton = new BoldButton(editor);
+        BoldButton boldButton = new BoldButton(editor); // tightly coupled with TextEditor class
         ItalicButton italicButton = new ItalicButton(editor);
         boldButton.click();
         italicButton.click();
