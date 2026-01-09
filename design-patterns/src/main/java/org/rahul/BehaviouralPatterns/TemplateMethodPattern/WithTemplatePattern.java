@@ -1,7 +1,7 @@
 package org.rahul.BehaviouralPatterns.TemplateMethodPattern;
 
 
-abstract class DataParser{
+abstract class DataParser{ //Abstract Class or template class for defining the template method
 
     //Template Method Define the steps of the algorithm
     public final void parse(){
@@ -18,7 +18,7 @@ abstract class DataParser{
     protected abstract void parseData();
 }
 //CSV Parser
-class CSVParserII extends DataParser{
+class CSVParserII extends DataParser{ // we are extending the abstract class DataParser so that we can use the template method parse()
 
     @Override
     protected void parseData() {
@@ -35,8 +35,8 @@ class JSONParserII extends DataParser{
 
 public class WithTemplatePattern {
     public static void main(String[] args) {
-        DataParser csvParser = new CSVParserII();
-        DataParser jsonParser = new JSONParserII();
+        DataParser csvParser = new CSVParserII(); // we are using the abstract class DataParser as a reference type to hold the object of CSVParserII class
+        DataParser jsonParser = new JSONParserII(); // we are using the abstract class DataParser as a reference type to hold the object of JSONParserII class
         csvParser.parse();
         jsonParser.parse();
     }

@@ -36,7 +36,7 @@ public class WithoutTemplateMethod {
     public static void main(String[] args) {
         CSVParser csvParser = new CSVParser();
         csvParser.parse();
-        JSONParser jsonParser = new JSONParser();
+        JSONParser jsonParser = new JSONParser(); // you can see code duplication here for openFile and closeFile methods hence we will use template method pattern to avoid this duplication
         jsonParser.parse();
     }
 }
