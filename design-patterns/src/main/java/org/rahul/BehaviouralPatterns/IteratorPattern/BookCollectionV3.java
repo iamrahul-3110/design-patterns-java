@@ -11,7 +11,7 @@ public class BookCollectionV3 implements Iterable<Book>{
     }
 
     @Override
-    public Iterator<Book> iterator() {
-        return books.iterator();
+    public Iterator<Book> iterator() { // now we don't need a separate method to create an iterator
+        return books.iterator(); // Using the built-in iterator of the TreeSet class
     }
 }

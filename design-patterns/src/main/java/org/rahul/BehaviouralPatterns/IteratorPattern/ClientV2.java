@@ -10,7 +10,7 @@ public class ClientV2 {
         bookCollection.addBook(new Book("Python Book"));
 
         Iterator<Book> iterator = bookCollection.createIterator();
-        while(iterator.hasNext()){
+        while(iterator.hasNext()){ // until there are more elements to iterate
             Book book = iterator.next();
             System.out.println(book);
         }

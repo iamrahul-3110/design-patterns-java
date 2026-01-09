@@ -10,7 +10,7 @@ public class ClientV3 {
         bookCollection.addBook(new Book("Java Book"));
 
 
-        Iterator<Book> iterator = bookCollection.iterator(); //Standardized
+        Iterator<Book> iterator = bookCollection.iterator(); //Standardized method for obtaining an iterator
 
         while(iterator.hasNext()){
             Book book = iterator.next();

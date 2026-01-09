@@ -15,26 +15,26 @@ public class BookCollectionV2 {
         return books;
     }
 
-    public Iterator<Book> createIterator(){
-        return new BookIterator(this.books);
+    public Iterator<Book> createIterator(){  // Method to create and return an iterator for the collection
+        return new BookIterator(this.books); // depends on the nested class BookIterator ie. dependency Injection
     }
 
     //Another Class (Nested Class)
     private class BookIterator implements Iterator<Book>{
-        private List<Book> books;
-        private int position = 0;
+        private List<Book> books; // Collection to iterate over
+        private int position = 0; // To keep track of current position in the collection
 
         public BookIterator(List<Book> books){
             this.books = books;
         }
 
         @Override
-        public boolean hasNext() {
+        public boolean hasNext() { // Check if there are more elements to iterate
            return position < books.size();
         }
 
         @Override
-        public Book next() {
+        public Book next() { // Return the next element in the collection
             return books.get(position++);
         }
     }
